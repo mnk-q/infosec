@@ -1,0 +1,5 @@
+Create a C program for following encryption - decryption method
+Ceaser Cipher
+Double Transposition Cipher
+Monoalphabetic Substitutional Cipher, Use of mapping tables
+Polyalphabetic Substitutional Cipher (Eg. Vigenere Cipher)
