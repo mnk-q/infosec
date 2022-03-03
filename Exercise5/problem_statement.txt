@@ -1,0 +1,5 @@
+Implement the following in C / C++
+
+Mutual Authentication using Shared Key
+Mutual Authentication using Public Key
+Digital Signature
