@@ -89,9 +89,9 @@ ll get_random_prime(){
     return primes[rand()%143];
 }
 
-pair<pair<ll,ll>, ll> rsa(){
+pair<pair<ll,ll>, ll> rsa(int seed = 199){
 
-
+    srand(seed);
     ll p = get_random_prime();
     ll q = get_random_prime();
 

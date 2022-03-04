@@ -62,13 +62,23 @@ char *encrypt_string(ll n, ll e, char *msg, int msg_size){
     char *enc;
     enc = (char *)malloc(sizeof(char)*msg_size);
     for(int i=0; i<msg_size; i++){
-        enc[i] = power(1ll*msg[i], e, n);
+        enc[i] = power(1ll*(msg[i]-96), e, n);
     }
-
     return enc;
 }
 
-ll encrypt_digit(ll n, ll e, ll p){
+char *decrypt_string(ll n, ll e, char *msg, int msg_size){
+    char *enc;
+    enc = (char *)malloc(sizeof(char)*msg_size);
+    for(int i=0; i<msg_size; i++){
+        ll p = power(1ll*(msg[i]), e, n);
+        enc[i] = p+96;
+    }
+    return enc;
+}
+
+
+ll encrypt_digit(ll p, ll e, ll n){
     return power(p, e, n);
 }
 
@@ -89,10 +99,10 @@ int main(){
     printf("P: %lld\nQ: %lld\nN: %lld\ne: %lld\nz: %lld\nd: %lld\n",p,q,n,e,z,d);
     ll plain = 19;
     printf("Plain : %lld\n", plain);
-    ll cipher = encrypt_digit(n, e, plain);
-    printf("Encrypted : %lld\n", cipher);
-    ll uncipher = encrypt_digit(n,d, cipher);
-    printf("Decrypted : %lld\n", uncipher);
+    ll cipher = encrypt_digit(plain, e, n);
+    printf("Encrypted with Public Key : %lld\n", cipher);
+    ll uncipher = encrypt_digit(cipher, d, n);
+    printf("Decrypted with Private key : %lld\n", uncipher);
 
 
 
@@ -118,7 +128,7 @@ int main(){
     // char *dec;
     // printf("\n Decrypted Message : ");
 
-    // dec = encrypt_string(n, d, enc, sizeof(msg));
+    // dec = decrypt_string(n, d, enc, sizeof(msg));
     // for(int i=0; i<sizeof(msg); i++)
     //     printf("%c", dec[i]);
 

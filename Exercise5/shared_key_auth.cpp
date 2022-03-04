@@ -48,7 +48,7 @@ class Person{
         }
 
         bool compare(string recevied){
-            cout << "Object word " << send_challange << " Recevied " << recevied << endl << endl; 
+            cout << name << " word " << send_challange << " Recevied " << recevied << " decrypted " << decrypt(recevied) << endl << endl; 
             if(decrypt(recevied) == send_challange)
                 return true;
             return false;

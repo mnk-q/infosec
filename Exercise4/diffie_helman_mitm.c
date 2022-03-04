@@ -34,18 +34,18 @@ int main()
 
     struct person alice, bob, eve;
     // Think of a number G and N
-    ll g = 3;
+    ll g = 201;
     ll n = 91;
 
     // Alice generates a number and creates her g^x mod n
-    alice.p = 13;
+    alice.p = 67;
     alice.keys[0] = power(g, alice.p, n);
 
     // Alice prepares to send these. Eve catches them midway
     eve.keys[1] = alice.keys[0];
 
     // Eve creates her own number and sends to Bob
-    eve.p = 22;
+    eve.p = 88;
     eve.keys[0] = power(g, eve.p, n);
 
     // Eve prepares a number to handle encryption from Alice side
@@ -55,7 +55,7 @@ int main()
     bob.keys[1] = eve.keys[0];
 
     // Bob creates his own number
-    bob.p = 11;
+    bob.p = 101;
     bob.keys[0] = power(g, bob.p, n);
 
     // Bob sends these to Alice. Eve catches them midway
