@@ -134,9 +134,10 @@ def run_register():
 # Main Event Loop
 while True:
     print(" ----------- Welcome ---------------")
-    print("1. Login ")
-    print("2. Register")
-    print("4. Exit")
+    print("Login ")
+    print("Register")
+    print("Hack")
+    print("Exit")
     
     ip = int(input( ">> " ))
     if (ip == 1):
