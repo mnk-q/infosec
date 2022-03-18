@@ -27,4 +27,4 @@ I tried to implement the algorithms in C / C++.
 <hr>
 
 * [Digital Signature](https://github.com/mnk-q/infosec/blob/master/Exercise5/digital_signature.cpp)
-* [Hashing]()
+* [Hashing]((https://github.com/mnk-q/infosec/blob/master/Exercise6/login.py)
